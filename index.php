@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="stronga_główna">
-        <a href="index.php"><h1>Srona główna</h1></a>
+        <h1>Filmweb_logo</h1>
     </div>
     <div id="navbar">
         <h3 id="navbarContent"><a href="s1.php">s1</h3></a>
@@ -21,11 +21,11 @@
     </div>
     <div id="Sponsorowane_filmy">
         <h2>POLECANE FILMY</h2>
-        <p>lorem ipsu blyblybly</p>
-        <p>lorem ipsu blyblybly</p>
-        <p>lorem ipsu blyblybly</p>
-        <p>lorem ipsu blyblybly</p>
-        <p>lorem ipsu blyblybly</p>
+        <p>jakis film</p>
+        <p>jakis film</p>
+        <p>jakis film</p>
+        <p>jakis film</p>
+        <p>jakis film</p>
     </div>
 
     <?php
