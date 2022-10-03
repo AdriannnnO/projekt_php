@@ -12,7 +12,7 @@
         <h1>Filmweb_logo</h1>
     </div>
     <div id="navbar">
-        <h3 id="navbarContent"><a href="s1.php">Filmy</h3></a>
+        <h3 id="navbarContent"><a href="rejestracja.php">Rejestracja</h3></a>
         <h3 id="navbarContent"><a href="s2.php">Ranking</h3></a>
         <h3 id="navbarContent"> <a href="O_nas.php">O nas</h3></a>
     </div>
