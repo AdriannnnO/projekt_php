@@ -10,7 +10,7 @@
 </head>
 <body>
     <h1>jakieś ten tego</h1>
-    <form action="rejestracja.php" method="get">
+    <form action="test2.php" method="get">
   <div class="container">
     <P><label for="uname"><b>Username</b></label></p>
     <input type="text" placeholder="Enter Username" name="name" >
@@ -46,25 +46,18 @@
   </div>
 </form>
 
-<!-- <?php
-    // if(isset($_GET['name'])==" "){
-    //     echo 'nie wprowadzono nazwy';
-    // }
-    // else{
-    //     echo "twoja nazwa to " . $_GET['name'];
-    // }
-    if(empty($_GET["name"])){
-        echo 'nie wprowadzono nazwy użytkownika';
-    }
-    else{
-        echo "twoja nazwa to " . $_GET['name'];
-    }
-    if (empty($_GET['psw'])){
-        echo "<p>nie wprowadzono hasła</p>";
-    }
-    else{
-        echo "<p>hasło wprowadzone</p>";
-    }
-?> -->
+<?php
+     $name = $psw = "";
+
+     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+       $name = test_input($_POST["name"]);
+       $email = test_input($_POST["email"]);
+       $website = test_input($_POST["website"]);
+       $comment = test_input($_POST["comment"]);
+       $gender = test_input($_POST["gender"]);
+     }
+     
+     echo $name
+?>
 </body>
 </html>
