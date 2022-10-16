@@ -10,7 +10,7 @@
 </head>
 <body>
     <h1>jakieś ten tego</h1>
-    <form action="test2.php" method="get">
+    <form action="test2.php" method="POST">
   <div class="container">
     <P><label for="uname"><b>Username</b></label></p>
     <input type="text" placeholder="Enter Username" name="name" >
@@ -47,17 +47,9 @@
 </form>
 
 <?php
-     $name = $psw = "";
 
-     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-       $name = test_input($_POST["name"]);
-       $email = test_input($_POST["email"]);
-       $website = test_input($_POST["website"]);
-       $comment = test_input($_POST["comment"]);
-       $gender = test_input($_POST["gender"]);
-     }
-     
-     echo $name
+
+
 ?>
 </body>
 </html>

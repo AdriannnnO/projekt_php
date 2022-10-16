@@ -10,8 +10,8 @@
 </head>
 <body>
     <h1> <a href="index.php">wróć </h1></a>
-    <h1 id="rej">Rejestracja</h1>
-    <form action="rejestracja.php" method="post">
+    <h1 id="rej">Logowanie</h1>
+    <form action="logowanie.php" method="get">
 
   <div class="container">
 
@@ -24,7 +24,7 @@
     <p><label for="userEmail"><b>Email</b></label></p>
     <input type="text" placeholder="Enter Email" name="userEmail" id="" requierd>
 
-    <button type="submit" name="ok">Register</button>
+    <button type="submit" name="ok">Login</button>
     
   </div>
 
@@ -35,42 +35,41 @@
 </form>
 
 <?php
-
 require_once"config.php";
 
 $connection = new mysqli($host, $db_user, $db_password, $db_name);
 
-echo $connection -> connect_errno;
+echo $connection -> connect_errno; 
 echo $connection -> connect_error; 
 
-if (isset($_POST["username"])) {
-  echo "<p>username set</p>";    
-} else {    
-  echo "<p>username not set</p>";
-}
-if (isset($_POST["userEmail"])) {
-  echo "<p>useremail set</p>";    
-} else {    
-  echo "<p>useremail not set</p>";
-}
-if (isset($_POST["userPassword"])) {
-  echo "<p>userpassword set</p>";    
-} else {    
-  echo "<p>userpassword not set</p>";
-}
+if (isset($_GET["username"]) & isset($_GET["username"]) & isset($_GET["username"])) {
 
-if (isset($_POST["username"]) & isset($_POST["username"]) & isset($_POST["username"])) {
-    $sql = "INSERT INTO uzytkownicy (id, username, userPassword,	userEmail) values ('','".$_POST["username"]."','".$_POST["userPassword"]."','".$_POST["userEmail"]."')";
-    $result = $connection -> query($sql);
-}
-  else{
-    echo "nie";
-  }
+$sql = "SELECT * FROM uzytkownicy WHERE username='".$_GET["username"]."' AND userPassword='".$_GET["userPassword"]."' AND userEmail='".$_GET["userEmail"]."'";
+$result = $connection -> query($sql);
+if($result = $connection -> query($sql)) {
+
+    if($result -> num_rows > 0) {
+
+    $data = $result -> fetch_assoc();
+    $user = $data['username'];
+    $email = $data['userEmail'];
+    $result -> close();
+    echo "<p>Witaj! $user</p>";
+    } else {
+    echo "Taki użytkownik nie istnieje";
+    }
+    }
+
 
 
 
 $connection -> close();
+}
+else{
+    echo "<p>nie smiga cos</p>";
+}
+
+
+
 
 ?>
-</body>
-</html>
