@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="rejestracja.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <h1> <a href="index.php">wróć </h1></a>
+    <h1 id="rej">Logowanie</h1>
+    <form action="logowanie.php" method="get">
+
+  <div class="container">
+
+    <P><label for="username"><b>Username</b></label></p>
+    <input type="text" placeholder="Enter Username" name="username" id="" required>
+
+    <P><label for="userPassword"><b>Password</b></label></p>
+    <input type="text" placeholder="Enter Password" name="userPassword" id="" required>
+
+    <p><label for="userEmail"><b>Email</b></label></p>
+    <input type="text" placeholder="Enter Email" name="userEmail" id="" requierd>
+
+    <button type="submit" name="ok">Login</button>
+    
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw"><a href="xd.html">Forgot password?</a></span>
+  </div>
+</form>
+
+<?php
+require_once"config.php";
+
+$connection = new mysqli($host, $db_user, $db_password, $db_name);
+
+echo $connection -> connect_errno; 
+echo $connection -> connect_error; 
+
+if (isset($_GET["username"]) & isset($_GET["username"]) & isset($_GET["username"])) {
+
+$sql = "SELECT * FROM uzytkownicy WHERE username='".$_GET["username"]."' AND userPassword='".$_GET["userPassword"]."' AND userEmail='".$_GET["userEmail"]."'";
+$result = $connection -> query($sql);
+if($result = $connection -> query($sql)) {
+
+    if($result -> num_rows > 0) {
+
+    $data = $result -> fetch_assoc();
+    $user = $data['username'];
+    $email = $data['userEmail'];
+    $result -> close();
+    echo "<p>Witaj! $user</p>";
+    } else {
+    echo "Taki użytkownik nie istnieje";
+    }
+    }
+
+
+
+
+$connection -> close();
+}
+else{
+    echo "<p>nie smiga cos</p>";
+}
+
+
+
+
+?>
