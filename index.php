@@ -8,6 +8,9 @@
     <title>Document</title>
 </head>
 <body>
+    <?php 
+        session_unset();
+    ?>
     <div id="stronga_główna">
         <h1>Filmweb_logo</h1>
     </div>

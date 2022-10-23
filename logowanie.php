@@ -61,7 +61,10 @@ if($result = $connection -> query($sql)) {
     } 
   }
   else {
-    echo "<h1>niepoprawne dane logowanie</h1>";
+    $_SESSION['loginerror'] = true;
+    if ($_SESSION['loginerror'] = true) {
+      echo "<h1>niepoprawne dane logowanie</h1>";
+    }
   }
   
 }
