@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1> <a href="index.php">wróć </h1></a>
+    <h1> <a href="index.php"> <- Wróć </h1></a>
     <h1 id="rej">Rejestracja</h1>
     <form action="rejestracja.php" method="post">
 
@@ -19,10 +19,10 @@
     <input type="text" placeholder="Enter Username" name="username" id="" required>
 
     <P><label for="userPassword"><b>Password</b></label></p>
-    <input type="text" placeholder="Enter Password" name="userPassword" id="" required>
+    <input type="password" placeholder="Enter Password" name="userPassword" id="" required>
 
     <p><label for="userEmail"><b>Email</b></label></p>
-    <input type="text" placeholder="Enter Email" name="userEmail" id="" requierd>
+    <input type="email" placeholder="Enter Email" name="userEmail" id="" requierd>
 
     <button type="submit" name="ok">Register</button>
     

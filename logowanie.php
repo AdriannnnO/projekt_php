@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1> <a href="index.php">wróć </h1></a>
+    <h1> <a href="index.php"> <- Wróć</h1></a>
     <h1 id="rej">Logowanie</h1>
     <form action="logowanie.php" method="get">
 
@@ -19,10 +19,10 @@
     <input type="text" placeholder="Enter Username" name="username" id="" required>
 
     <P><label for="userPassword"><b>Password</b></label></p>
-    <input type="text" placeholder="Enter Password" name="userPassword" id="" required>
+    <input type="password" placeholder="Enter Password" name="userPassword" id="" required>
 
     <p><label for="userEmail"><b>Email</b></label></p>
-    <input type="text" placeholder="Enter Email" name="userEmail" id="" requierd>
+    <input type="email" placeholder="Enter Email" name="userEmail" id="" requierd>
 
     <button type="submit" name="ok">Login</button>
     
@@ -42,7 +42,7 @@ $connection = new mysqli($host, $db_user, $db_password, $db_name);
 echo $connection -> connect_errno; 
 echo $connection -> connect_error; 
 
-if (isset($_GET["username"]) & isset($_GET["username"]) & isset($_GET["username"])) {
+if (isset($_GET["username"]) & isset($_GET["userPassword"]) & isset($_GET["userEmail"])) {
 
 $sql = "SELECT * FROM uzytkownicy WHERE username='".$_GET["username"]."' AND userPassword='".$_GET["userPassword"]."' AND userEmail='".$_GET["userEmail"]."'";
 $result = $connection -> query($sql);
@@ -54,11 +54,17 @@ if($result = $connection -> query($sql)) {
     $user = $data['username'];
     $email = $data['userEmail'];
     $result -> close();
-    echo "<p>Witaj! $user</p>";
-    } else {
-    echo "Taki użytkownik nie istnieje";
-    }
-    }
+    $_SESSION['loggedin'] = true;
+    $_SESSION['username'] = $data['username'];
+    if ($_SESSION['loggedin'] = true) {
+      header('Location: indexlogin.php');
+    } 
+  }
+  else {
+    echo "jd";
+  }
+  
+}
 
 
 
@@ -66,7 +72,7 @@ if($result = $connection -> query($sql)) {
 $connection -> close();
 }
 else{
-    echo "<p>nie smiga cos</p>";
+  echo "<p>Nie działa</p>";
 }
 
 
