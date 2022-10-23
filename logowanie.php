@@ -61,7 +61,7 @@ if($result = $connection -> query($sql)) {
     } 
   }
   else {
-    echo "jd";
+    echo "<h1>niepoprawne dane logowanie</h1>";
   }
   
 }
@@ -71,9 +71,7 @@ if($result = $connection -> query($sql)) {
 
 $connection -> close();
 }
-else{
-  echo "<p>Nie działa</p>";
-}
+
 
 
 

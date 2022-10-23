@@ -38,10 +38,7 @@
 
 require_once"config.php";
 
-$connection = new mysqli($host, $db_user, $db_password, $db_name);
 
-echo $connection -> connect_errno;
-echo $connection -> connect_error; 
 
 if (isset($_POST["username"])) {
   echo "<p>username set</p>";    
@@ -59,17 +56,34 @@ if (isset($_POST["userPassword"])) {
   echo "<p>userpassword not set</p>";
 }
 
-if (isset($_POST["username"]) & isset($_POST["username"]) & isset($_POST["username"])) {
-    $sql = "INSERT INTO uzytkownicy (id, username, userPassword,	userEmail) values ('','".$_POST["username"]."','".$_POST["userPassword"]."','".$_POST["userEmail"]."')";
-    $result = $connection -> query($sql);
+if (isset($_POST["username"]) & isset($_POST["userPassword"]) & isset($_POST["userEmail"])) {
+  $username = $_POST["username"];
+  $useremail = $_POST['userEmail'];
+  $userpassword = $_POST['userPassword'];
+
+  if ($username != '' & $useremail != '' & $userpassword != ''){
+    $conn = new mysqli($host, $db_user, $db_password, $db_name);
+
+    echo $conn -> connection_errno;
+    echo $conn -> connect_error;
+
+     $sql = "SELECT * FROM uzytkownicy WHERE username='$username'AND userEmail='$useremail' AND userPassword='$userpassword'";
+     $result = $conn -> query($sql);
+     if ($result -> num_rows == 1){
+         echo "uzytkownik juz istnieje!";
+     } else {
+      $sql = "INSERT INTO uzytkownicy (username, useremail, userpassword) values ('".$username."','".$useremail."','".$userpassword."')";
+        $result = $conn -> query($sql);
 }
-  else{
-    echo "nie";
-  }
+$conn -> close();
+}
+}
 
 
 
-$connection -> close();
+
+
+
 
 ?>
 </body>
