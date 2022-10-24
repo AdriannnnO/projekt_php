@@ -43,9 +43,17 @@ echo $connection -> connect_errno;
 echo $connection -> connect_error; 
 
 if (isset($_GET["username"]) & isset($_GET["userPassword"]) & isset($_GET["userEmail"])) {
+  $username = htmlentities($_GET['username'], ENT_QUOTES, "UTF-8");
+  $userEmail = htmlentities($_GET['userEmail'], ENT_QUOTES, "UTF-8");
+  $userPassword = htmlentities($_GET['userPassword'], ENT_QUOTES, "UTF-8");
 
-$sql = "SELECT * FROM uzytkownicy WHERE username='".$_GET["username"]."' AND userPassword='".$_GET["userPassword"]."' AND userEmail='".$_GET["userEmail"]."'";
-$result = $connection -> query($sql);
+  $sql = sprintf(
+    "SELECT * FROM uzytkownicy WHERE userEmail='%s' AND userPassword='%s' AND username='%s'",
+    mysqli_real_escape_string($connection, $userEmail),
+    mysqli_real_escape_string($connection, $userPassword),
+    mysqli_real_escape_string($connection, $username)
+    );
+  $result = $connection -> query($sql);
 if($result = $connection -> query($sql)) {
 
     if($result -> num_rows > 0) {
@@ -56,9 +64,9 @@ if($result = $connection -> query($sql)) {
     $result -> close();
     $_SESSION['loggedin'] = true;
     $_SESSION['username'] = $data['username'];
-    if ($_SESSION['loggedin'] = true) {
+    // if ($_SESSION['loggedin'] = true) {
       header('Location: indexlogin.php');
-    } 
+    // } 
   }
   else {
     $_SESSION['loginerror'] = true;

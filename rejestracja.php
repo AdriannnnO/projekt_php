@@ -11,7 +11,7 @@
 <body>
     <h1> <a href="index.php"> <- Wróć </h1></a>
     <h1 id="rej">Rejestracja</h1>
-    <form action="rejestracja.php" method="post">
+    <form action="rejestracja.php" method="post" accept-charset="UTF-8">
 
   <div class="container">
 
