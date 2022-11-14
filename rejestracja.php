@@ -1,3 +1,8 @@
+<?php
+require_once"config.php";
+require"klasa.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,8 +41,6 @@
 
 <?php
 
-require_once"config.php";
-require"klasa.php";
 
 
 if (isset($_POST["username"])) {

@@ -1,3 +1,7 @@
+<?php
+ob_start();
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +13,6 @@
 </head>
 <body>
 <?php
-        session_start();
         if (isset($_SESSION['username'])) {
             echo '<h1>Witaj ' . $_SESSION['username'] . '</h1>';
         }

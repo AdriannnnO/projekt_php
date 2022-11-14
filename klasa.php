@@ -1,5 +1,5 @@
 <?php
-require"config.php";
+// require"config.php";
 
 // Class MainClass {
 //     public $host = "localhost";
@@ -17,6 +17,10 @@ Class MainClass {
         $connection = new mysqli("localhost","root","","baza");
         return $connection;
     }
-}
+    public function przekierowanie(){
+            // header('Location: index.php');
+            echo "hihi";
+        }
 
+    }
 ?>
