@@ -1,6 +1,7 @@
 <?php
 ob_start();
 session_start();
+require'klasa.php'
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,8 +14,13 @@ session_start();
 </head>
 <body>
 <?php
+        $MainObiekt = new MainClass;
         if (isset($_SESSION['username'])) {
             echo '<h1>Witaj ' . $_SESSION['username'] . '</h1>';
+        }
+        else{
+            $MainObiekt -> przekierowanie();
+            // echo "nigga";
         }
     ?>
     <div id="stronga_główna">

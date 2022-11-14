@@ -18,7 +18,7 @@ Class MainClass {
         return $connection;
     }
     public function przekierowanie(){
-            // header('Location: index.php');
+            header('Location: index.php');
             echo "hihi";
         }
 
