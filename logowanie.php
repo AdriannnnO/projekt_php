@@ -36,11 +36,13 @@
 
 <?php
 require_once"config.php";
+require"klasa.php";
 
-$connection = new mysqli($host, $db_user, $db_password, $db_name);
+$MainObiekt = new MainClass();
+$connection = $MainObiekt -> connection();
 
-echo $connection -> connect_errno; 
-echo $connection -> connect_error; 
+// echo $connection -> connect_errno; 
+// echo $connection -> connect_error; 
 
 if (isset($_GET["username"]) & isset($_GET["userPassword"]) & isset($_GET["userEmail"])) {
   $username = htmlentities($_GET['username'], ENT_QUOTES, "UTF-8");

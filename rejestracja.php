@@ -37,7 +37,7 @@
 <?php
 
 require_once"config.php";
-
+require"klasa.php";
 
 
 if (isset($_POST["username"])) {
@@ -56,26 +56,28 @@ if (isset($_POST["userPassword"])) {
   echo "<p>userpassword not set</p>";
 }
 
+$MainObiekt = new MainClass();
+
 if (isset($_POST["username"]) & isset($_POST["userPassword"]) & isset($_POST["userEmail"])) {
   $username = $_POST["username"];
   $useremail = $_POST['userEmail'];
   $userpassword = $_POST['userPassword'];
 
   if ($username != '' & $useremail != '' & $userpassword != ''){
-    $conn = new mysqli($host, $db_user, $db_password, $db_name);
+    $connection = $MainObiekt -> connection();
 
-    echo $conn -> connection_errno;
-    echo $conn -> connect_error;
+    // echo $connection -> connection_errno;
+    // echo $connection -> connect_error;
 
      $sql = "SELECT * FROM uzytkownicy WHERE username='$username'AND userEmail='$useremail' AND userPassword='$userpassword'";
-     $result = $conn -> query($sql);
+     $result = $connection -> query($sql);
      if ($result -> num_rows == 1){
          echo "uzytkownik juz istnieje!";
      } else {
       $sql = "INSERT INTO uzytkownicy (username, useremail, userpassword) values ('".$username."','".$useremail."','".$userpassword."')";
-        $result = $conn -> query($sql);
+        $result = $connection -> query($sql);
 }
-$conn -> close();
+$connection -> close();
 }
 }
 
