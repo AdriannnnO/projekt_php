@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,10 +38,9 @@
 </form>
 
 <?php
-require_once"config.php";
 require"klasa.php";
 
-$MainObiekt = new MainClass();
+$MainObiekt = new MainClass("localhost","root","","baza");
 $connection = $MainObiekt -> connection();
 
 // echo $connection -> connect_errno; 

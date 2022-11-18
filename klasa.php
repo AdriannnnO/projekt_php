@@ -1,5 +1,5 @@
 <?php
-// require"config.php";
+require"config.php";
 
 // Class MainClass {
 //     public $host = "localhost";
@@ -13,8 +13,18 @@
 // }
 
 Class MainClass {
+    public $host;
+    public $db_user;
+    public $db_password;
+    public $db_name;
+    public function __construct($host,$db_user,$db_password,$db_name){
+        $this -> host=$host;
+        $this -> db_user=$db_user;
+        $this -> db_password=$db_password;
+        $this -> db_name=$db_name;
+}
     public function connection(){
-        $connection = new mysqli("localhost","root","","baza");
+        $connection = new mysqli($this->host,$this->db_user,$this->db_password,$this->db_name);
         return $connection;
     }
     public function przekierowanie(){
