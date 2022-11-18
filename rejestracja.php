@@ -1,6 +1,6 @@
 <?php
-require_once"config.php";
 require"klasa.php";
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +59,7 @@ if (isset($_POST["userPassword"])) {
   echo "<p>userpassword not set</p>";
 }
 
-$MainObiekt = new MainClass();
+$MainObiekt = new MainClass("localhost","root","","baza");
 
 if (isset($_POST["username"]) & isset($_POST["userPassword"]) & isset($_POST["userEmail"])) {
   $username = $_POST["username"];

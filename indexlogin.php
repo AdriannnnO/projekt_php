@@ -14,7 +14,7 @@ require'klasa.php'
 </head>
 <body>
 <?php
-        $MainObiekt = new MainClass;
+        $MainObiekt = new MainClass("localhost","root","","baza");
         if (isset($_SESSION['username'])) {
             echo '<h1>Witaj ' . $_SESSION['username'] . '</h1>';
         }
