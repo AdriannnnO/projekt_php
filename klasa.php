@@ -76,6 +76,11 @@ Class MainClass {
         return $kasa;
 
     }
+    public function wplacpieniadze($username,$kwota){
+        $connection = new mysqli($this->host,$this->db_user,$this->db_password,$this->db_name);
+        $sql = "UPDATE uzytkownicy SET userMoney = userMoney+$kwota WHERE username='$username'";
+        $result = $connection ->query($sql);
+    }
     public function logowanie($username,$useremail,$userpassword){
         $connection = new mysqli($this->host,$this->db_user,$this->db_password,$this->db_name);
         $sql = sprintf(
