@@ -69,14 +69,14 @@ if (isset($_POST["userPassword"])) {
 // $repeatPassword = $_POST['repeatPassword'];
 
 if (isset($_POST['repeatPassword'])){
-  echo 'jd';
+  echo 'jhasla fe';
 }
 else{
-  echo 'nie jd';
+  echo 'sad zz ';
 }
 
 
-$MainObiekt = new MainClass("localhost","root","","baza");
+
 
 if (isset($_POST["username"]) & isset($_POST["userPassword"]) & isset($_POST["userEmail"])) {
   $username = $_POST["username"];
@@ -84,24 +84,18 @@ if (isset($_POST["username"]) & isset($_POST["userPassword"]) & isset($_POST["us
   $userpassword = $_POST['userPassword'];
   $repeatPassword = $_POST['repeatPassword'];
 
-  if ($username != '' & $useremail != '' & $userpassword != '' & $repeatPassword==$userpassword & strlen($userpassword)>=8 & is_numeric($userpassword[0])==FALSE){
-    $connection = $MainObiekt -> connection();
+  if ($username != '' & $useremail != '' & $userpassword != '' & $repeatPassword==$userpassword & strlen($userpassword)>=8){
+    $MainObiekt = new MainClass("localhost","root","","baza",$username,$useremail,$userpassword);
 
-    // echo $connection -> connection_errno;
-    // echo $connection -> connect_error;
+    if ($MainObiekt->walidacja($repeatPassword)==TRUE){
+      $MainObiekt -> rejestracja(); //rejestracja 
+    }else{
+      echo "jd";
+    }
 
-     $sql = "SELECT * FROM uzytkownicy WHERE username='$username'AND userEmail='$useremail' AND userPassword='$userpassword'";
-     $result = $connection -> query($sql);
-     if ($result -> num_rows == 1){
-         echo "uzytkownik juz istnieje!";
-     } else {
-      $sql = "INSERT INTO uzytkownicy (username, useremail, userpassword) values ('".$username."','".$useremail."','".$userpassword."')";
-        $result = $connection -> query($sql);
-     }
-
-}
-else{
-  if ($repeatPassword!=$userpassword or strlen($userpassword)<8 & is_numeric($string[0])==FALSE){
+ }
+else {
+  if ($repeatPassword!=$userpassword or strlen($userpassword)<8 & is_numeric($userpassword[0])==FALSE){
 
     alert("niepoprawne hasła i nazwa uzytkownika");
   }
@@ -112,10 +106,13 @@ else{
   elseif (is_numeric($username[0])==TRUE){
 
     alert("nazwa uzytkownika zaczyna sie od cyfry");
-  }
+}
+}
 }
 // $connection -> close();
-}
+
+
+
 
 
 
