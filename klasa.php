@@ -61,14 +61,46 @@ Class MainClass {
             $sql = "INSERT INTO uzytkownicy (username, useremail, userpassword) values ('".$username."','".$useremail."','".$userpassword."')";
             $result = $connection -> query($sql);
             echo "rej dokonczony";
+            
         }
     }
     public function jd($jd){
         echo jd;
     }
+    public function logowanie($username,$useremail,$userpassword){
+        $connection = new mysqli($this->host,$this->db_user,$this->db_password,$this->db_name);
+        $sql = sprintf(
+            "SELECT * FROM uzytkownicy WHERE userEmail='%s' AND userPassword='%s' AND username='%s'",
+            mysqli_real_escape_string($connection, $useremail),
+            mysqli_real_escape_string($connection, $userpassword),
+            mysqli_real_escape_string($connection, $username)
+            );
+          $result = $connection -> query($sql);
+        if($result = $connection -> query($sql)) {
+        
+            if($result -> num_rows > 0) {
+        
+            $data = $result -> fetch_assoc();
+            $user = $data['username'];
+            $email = $data['userEmail'];
+            $result -> close();
+            $_SESSION['loggedin'] = true;
+            $_SESSION['username'] = $data['username'];
+            $this -> przekierowanie("indexlogin.php");
+          }
+          else {
+            $_SESSION['loginerror'] = true;
+            if ($_SESSION['loginerror'] = true) {
+            //   echo "<h1>niepoprawne dane logowanie</h1>";
+              alert("niepoprawne dane logowania");
+              
+            }
+          }
+    }
 
 
 // $connection -> close();
+}
 }
 
 ?>

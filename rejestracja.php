@@ -1,9 +1,7 @@
 <?php
 require"klasa.php";
 session_start();
-function alert($msg) {
-  echo "<script type='text/javascript'>alert('$msg');</script>";
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -89,6 +87,8 @@ if (isset($_POST["username"]) & isset($_POST["userPassword"]) & isset($_POST["us
 
     if ($MainObiekt->walidacja($username,$useremail,$userpassword,$repeatPassword)==TRUE){
         $MainObiekt -> rejestracja($username,$useremail,$userpassword,$repeatPassword); //rejestracja 
+        $_SESSION['loggedin'] = true;
+        $MainObiekt -> przekierowanie('porej.php');
     }else{
       alert('niepoprawne dane logowania');
     }

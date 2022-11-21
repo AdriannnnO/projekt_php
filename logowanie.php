@@ -40,8 +40,7 @@ session_start();
 <?php
 require"klasa.php";
 
-$MainObiekt = new MainClass("localhost","root","","baza");
-$connection = $MainObiekt -> connection();
+
 
 
 // echo $connection -> connect_errno; 
@@ -52,38 +51,10 @@ if (isset($_GET["username"]) & isset($_GET["userPassword"]) & isset($_GET["userE
   $userEmail = htmlentities($_GET['userEmail'], ENT_QUOTES, "UTF-8");
   $userPassword = htmlentities($_GET['userPassword'], ENT_QUOTES, "UTF-8");
 
-  $sql = sprintf(
-    "SELECT * FROM uzytkownicy WHERE userEmail='%s' AND userPassword='%s' AND username='%s'",
-    mysqli_real_escape_string($connection, $userEmail),
-    mysqli_real_escape_string($connection, $userPassword),
-    mysqli_real_escape_string($connection, $username)
-    );
-  $result = $connection -> query($sql);
-if($result = $connection -> query($sql)) {
+  $MainObiekt = new MainClass("localhost","root","","baza");
+  $connection = $MainObiekt -> connection();
+  $MainObiekt->logowanie($username,$userEmail,$userPassword);
 
-    if($result -> num_rows > 0) {
-
-    $data = $result -> fetch_assoc();
-    $user = $data['username'];
-    $email = $data['userEmail'];
-    $result -> close();
-    $_SESSION['loggedin'] = true;
-    $_SESSION['username'] = $data['username'];
-    $MainObiekt -> przekierowanie("indexlogin.php");
-  }
-  else {
-    $_SESSION['loginerror'] = true;
-    if ($_SESSION['loginerror'] = true) {
-      echo "<h1>niepoprawne dane logowanie</h1>";
-    }
-  }
-  
-}
-
-
-
-
-$connection -> close();
 }
 
 
