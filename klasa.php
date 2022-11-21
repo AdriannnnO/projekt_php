@@ -16,18 +16,12 @@ Class MainClass {
     public $db_user;
     public $db_password;
     public $db_name;
-    public $username;
-    public $useremail;
-    public $userpassword;
-    public function __construct($host,$db_user,$db_password,$db_name,$username,$useremail,$userpassword){
+    public function __construct($host,$db_user,$db_password,$db_name){
         $this -> host=$host;
         $this -> db_user=$db_user;
         $this -> db_password=$db_password;
         $this -> db_name=$db_name;
-        $this -> username=$username;
-        $this -> useremail=$useremail;
-        $this -> userpassword=$userpassword;
-}
+    }
     public function connection(){
         $connection = new mysqli($this->host,$this->db_user,$this->db_password,$this->db_name);
         return $connection;
@@ -36,23 +30,35 @@ Class MainClass {
             header('Location: '. $redirect);
             echo "hihi";
     }
-    public function walidacja($repeatPassword){
-        if ($this->username != '' & $this->useremail != '' & $this->userpassword != '' & $repeatPassword==$this->userpassword){
+    public function walidacja($username,$useremail,$userpassword,$repeatPassword){
+        if ($username != '' & $useremail != '' & $userpassword != '' & $repeatPassword==$userpassword & strlen($userpassword)>=8){
             return TRUE;
+            
         }
         else{
-            return FALSE;
+            if ($repeatPassword!=$userpassword or strlen($userpassword)<8 & is_numeric($userpassword[0])==TRUE){
+                return FALSE;
+              }
+              elseif ($repeatPassword!=$userpassword or strlen($userpassword)<8){
+            
+                return FALSE;
+              }
+              elseif (is_numeric($username[0])==TRUE){
+            
+                return FALSE;
+            }
+            echo "jd";
         }
 
     }
-    public function rejestracja(){
+    public function rejestracja($username,$useremail,$userpassword,$repeatPassword){
         $connection = new mysqli($this->host,$this->db_user,$this->db_password,$this->db_name);
-        $sql = "SELECT * FROM uzytkownicy WHERE username='$this->username'AND userEmail='$this->useremail' AND userPassword='$this->userpassword'";
+        $sql = "SELECT * FROM uzytkownicy WHERE username='$username'AND userEmail='$useremail' AND userPassword='$userpassword'";
         $result = $connection -> query($sql);
         if ($result -> num_rows == 1){
             echo "uzytkownik juz istnieje!";
         } else {
-            $sql = "INSERT INTO uzytkownicy (username, useremail, userpassword) values ('".$this->username."','".$this->useremail."','".$this->userpassword."')";
+            $sql = "INSERT INTO uzytkownicy (username, useremail, userpassword) values ('".$username."','".$useremail."','".$userpassword."')";
             $result = $connection -> query($sql);
             echo "rej dokonczony";
         }

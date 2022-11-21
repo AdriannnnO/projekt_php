@@ -84,30 +84,15 @@ if (isset($_POST["username"]) & isset($_POST["userPassword"]) & isset($_POST["us
   $userpassword = $_POST['userPassword'];
   $repeatPassword = $_POST['repeatPassword'];
 
-  if ($username != '' & $useremail != '' & $userpassword != '' & $repeatPassword==$userpassword & strlen($userpassword)>=8){
-    $MainObiekt = new MainClass("localhost","root","","baza",$username,$useremail,$userpassword);
+  if (isset($username) & isset($useremail) & isset($userpassword)){
+    $MainObiekt = new MainClass("localhost","root","","baza");
 
-    if ($MainObiekt->walidacja($repeatPassword)==TRUE){
-      $MainObiekt -> rejestracja(); //rejestracja 
+    if ($MainObiekt->walidacja($username,$useremail,$userpassword,$repeatPassword)==TRUE){
+        $MainObiekt -> rejestracja($username,$useremail,$userpassword,$repeatPassword); //rejestracja 
     }else{
-      echo "jd";
+      alert('niepoprawne dane logowania');
     }
-
  }
-else {
-  if ($repeatPassword!=$userpassword or strlen($userpassword)<8 & is_numeric($userpassword[0])==FALSE){
-
-    alert("niepoprawne hasła i nazwa uzytkownika");
-  }
-  elseif ($repeatPassword!=$userpassword or strlen($userpassword)<8){
-
-    alert("niepoprawne hasła");
-  }
-  elseif (is_numeric($username[0])==TRUE){
-
-    alert("nazwa uzytkownika zaczyna sie od cyfry");
-}
-}
 }
 // $connection -> close();
 
