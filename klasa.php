@@ -67,6 +67,15 @@ Class MainClass {
     public function jd($jd){
         echo jd;
     }
+    public function stankonta($username){
+        $connection = new mysqli($this->host,$this->db_user,$this->db_password,$this->db_name);
+        $sql = "SELECT userMoney FROM uzytkownicy where username='$username'";
+        $result = $connection ->query($sql);
+        $data = $result -> fetch_assoc();
+        $kasa = $data['userMoney'];
+        return $kasa;
+
+    }
     public function logowanie($username,$useremail,$userpassword){
         $connection = new mysqli($this->host,$this->db_user,$this->db_password,$this->db_name);
         $sql = sprintf(

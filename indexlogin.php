@@ -27,7 +27,7 @@ require'klasa.php'
         <h1>Filmweb_logo</h1>
     </div>
     <div id="navbar">
-        <h3 id="navbarContent"><a href="s2.php">Ranking</h3></a>
+        <h3 id="navbarContent"><a href="s2.php">Moje Konto</h3></a>
         <h3 id="navbarContent"><a href="index.php">Wyloguj się</h3></a>
     </div>
     <div id="text">
