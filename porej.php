@@ -7,6 +7,7 @@ session_start();
 $MainObiekt = new MainClass("localhost","root","","baza");
 if (isset($_SESSION['loggedin'])==TRUE) {
         echo "<h1>rejestracja zakończona sukcesem<h1>";
+        echo "<h1><a href='index.php'>POWRÓT</a></h1>";
     }else{
         $MainObiekt -> przekierowanie("index.php");
         // echo "nigga";
