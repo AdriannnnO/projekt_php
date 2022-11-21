@@ -1,6 +1,9 @@
 <?php
 require"klasa.php";
 session_start();
+function alert($msg) {
+  echo "<script type='text/javascript'>alert('$msg');</script>";
+}
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +28,9 @@ session_start();
 
     <P><label for="userPassword"><b>Password</b></label></p>
     <input type="password" placeholder="Enter Password" name="userPassword" id="" required>
+
+    <P><label for="repeatPassword"><b>Repeat password</b></label></p>
+    <input type="password" placeholder="Repeat Password" name="repeatPassword" id="" required>
 
     <p><label for="userEmail"><b>Email</b></label></p>
     <input type="email" placeholder="Enter Email" name="userEmail" id="" requierd>
@@ -59,14 +65,26 @@ if (isset($_POST["userPassword"])) {
   echo "<p>userpassword not set</p>";
 }
 
+// echo $_POST['repeatPassword'];
+// $repeatPassword = $_POST['repeatPassword'];
+
+if (isset($_POST['repeatPassword'])){
+  echo 'jd';
+}
+else{
+  echo 'nie jd';
+}
+
+
 $MainObiekt = new MainClass("localhost","root","","baza");
 
 if (isset($_POST["username"]) & isset($_POST["userPassword"]) & isset($_POST["userEmail"])) {
   $username = $_POST["username"];
   $useremail = $_POST['userEmail'];
   $userpassword = $_POST['userPassword'];
+  $repeatPassword = $_POST['repeatPassword'];
 
-  if ($username != '' & $useremail != '' & $userpassword != ''){
+  if ($username != '' & $useremail != '' & $userpassword != '' & $repeatPassword==$userpassword & strlen($userpassword)>=8 & is_numeric($userpassword[0])==FALSE){
     $connection = $MainObiekt -> connection();
 
     // echo $connection -> connection_errno;
@@ -79,10 +97,26 @@ if (isset($_POST["username"]) & isset($_POST["userPassword"]) & isset($_POST["us
      } else {
       $sql = "INSERT INTO uzytkownicy (username, useremail, userpassword) values ('".$username."','".$useremail."','".$userpassword."')";
         $result = $connection -> query($sql);
+     }
+
 }
-$connection -> close();
+else{
+  if ($repeatPassword!=$userpassword or strlen($userpassword)<8 & is_numeric($string[0])==FALSE){
+
+    alert("niepoprawne hasła i nazwa uzytkownika");
+  }
+  elseif ($repeatPassword!=$userpassword or strlen($userpassword)<8){
+
+    alert("niepoprawne hasła");
+  }
+  elseif (is_numeric($username[0])==TRUE){
+
+    alert("nazwa uzytkownika zaczyna sie od cyfry");
+  }
 }
+// $connection -> close();
 }
+
 
 
 
@@ -92,4 +126,5 @@ $connection -> close();
 
 ?>
 </body>
+
 </html>
