@@ -19,7 +19,7 @@ require'klasa.php'
             echo '<h1>Witaj ' . $_SESSION['username'] . '</h1>';
         }
         else{
-            $MainObiekt -> przekierowanie();
+            $MainObiekt -> przekierowanie("index.php");
             // echo "nigga";
         }
     ?>

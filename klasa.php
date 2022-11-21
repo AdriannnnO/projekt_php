@@ -27,8 +27,8 @@ Class MainClass {
         $connection = new mysqli($this->host,$this->db_user,$this->db_password,$this->db_name);
         return $connection;
     }
-    public function przekierowanie(){
-            header('Location: index.php');
+    public function przekierowanie($redirect){
+            header('Location: '. $redirect);
             echo "hihi";
         }
 

@@ -43,6 +43,7 @@ require"klasa.php";
 $MainObiekt = new MainClass("localhost","root","","baza");
 $connection = $MainObiekt -> connection();
 
+
 // echo $connection -> connect_errno; 
 // echo $connection -> connect_error; 
 
@@ -68,9 +69,7 @@ if($result = $connection -> query($sql)) {
     $result -> close();
     $_SESSION['loggedin'] = true;
     $_SESSION['username'] = $data['username'];
-    // if ($_SESSION['loggedin'] = true) {
-      header('Location: indexlogin.php');
-    // } 
+    $MainObiekt -> przekierowanie("indexlogin.php");
   }
   else {
     $_SESSION['loginerror'] = true;
