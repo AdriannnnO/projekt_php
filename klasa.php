@@ -31,7 +31,7 @@ Class MainClass {
             echo "hihi";
     }
     public function walidacja($username,$useremail,$userpassword,$repeatPassword){
-        if ($username != '' & $useremail != '' & $userpassword != '' & $repeatPassword==$userpassword & strlen($userpassword)>=8){
+        if ($username != '' & $useremail != '' & $userpassword != '' & $repeatPassword==$userpassword & strlen($userpassword)>=8 & is_numeric($userpassword[0])==FALSE){
             return TRUE;
             
         }
