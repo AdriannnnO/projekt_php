@@ -28,7 +28,7 @@ require'klasa.php'
     </div>
     <div id="navbar">
         <h3 id="navbarContent"><a href="s2.php">Moje Konto</h3></a>
-        <h3 id="navbarContent"><a href="index.php">Wyloguj się</h3></a>
+        <h3 id="navbarContent"><a href="logout.php">Wyloguj</h3></a>
     </div>
     <div id="text">
         <P id="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eleifend lobortis. Integer commodo sit amet nibh sit amet vehicula. Mauris ac tincidunt ante, id placerat tortor. Vestibulum dignissim sollicitudin erat quis vehicula. Integer nec ullamcorper mauris. Morbi tincidunt, tortor vel rutrum dictum, tellus tellus dapibus dui, non vehicula augue mauris at arcu. Sed laoreet tellus quis arcu pretium hendrerit. Phasellus posuere, metus nec elementum interdum, mauris velit accumsan enim, ut iaculis massa neque ut nisl. Quisque eu egestas mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus, velit eu gravida accumsan, orci tellus varius nisi, in euismod.</p>
