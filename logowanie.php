@@ -14,7 +14,7 @@ session_start();
 <body>
     <h1> <a href="index.php"> <- Wróć</h1></a>
     <h1 id="rej">Logowanie</h1>
-    <form action="logowanie.php" method="get">
+    <form action="logowanie.php" method="POST">
 
   <div class="container">
 
@@ -46,10 +46,10 @@ require"klasa.php";
 // echo $connection -> connect_errno; 
 // echo $connection -> connect_error; 
 
-if (isset($_GET["username"]) & isset($_GET["userPassword"]) & isset($_GET["userEmail"])) {
-  $username = htmlentities($_GET['username'], ENT_QUOTES, "UTF-8");
-  $userEmail = htmlentities($_GET['userEmail'], ENT_QUOTES, "UTF-8");
-  $userPassword = htmlentities($_GET['userPassword'], ENT_QUOTES, "UTF-8");
+if (isset($_POST["username"]) & isset($_POST["userPassword"]) & isset($_POST["userEmail"])) {
+  $username = htmlentities($_POST['username'], ENT_QUOTES, "UTF-8");
+  $userEmail = htmlentities($_POST['userEmail'], ENT_QUOTES, "UTF-8");
+  $userPassword = htmlentities($_POST['userPassword'], ENT_QUOTES, "UTF-8");
 
   $MainObiekt = new MainClass("localhost","root","","baza");
   $connection = $MainObiekt -> connection();
