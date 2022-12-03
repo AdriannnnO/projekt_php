@@ -1,0 +1,9 @@
+donate blood option
+ranking
+po ilustam przyznaje order
+ile jest krwi jakiego rodzaju
+
+
+SELECT dotacje.user_id,username,ilosc
+FROM dotacje
+left join uzytkownicy on dotacje.user_id=uzytkownicy.user_id

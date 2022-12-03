@@ -76,9 +76,23 @@ Class MainClass {
         return $kasa;
 
     }
+    public function grupa($username){
+        $connection = new mysqli($this->host,$this->db_user,$this->db_password,$this->db_name);
+        $sql = "SELECT grupa_krwi FROM uzytkownicy where username='$username'";
+        $result = $connection ->query($sql);
+        $data = $result -> fetch_assoc();
+        $grupa = $data['grupa_krwi'];
+        return $grupa;
+
+    }
     public function wplacpieniadze($username,$kwota){
         $connection = new mysqli($this->host,$this->db_user,$this->db_password,$this->db_name);
         $sql = "UPDATE uzytkownicy SET userMoney = userMoney+$kwota WHERE username='$username'";
+        $result = $connection ->query($sql);
+    }
+    public function ustaw_grupe_krwi($username,$grupa){
+        $connection = new mysqli($this->host,$this->db_user,$this->db_password,$this->db_name);
+        $sql = "UPDATE uzytkownicy SET grupa_krwi = '$grupa' WHERE username='$username'";
         $result = $connection ->query($sql);
     }
     public function logowanie($username,$useremail,$userpassword){
