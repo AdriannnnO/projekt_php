@@ -1,17 +1,15 @@
 <?php
 session_start();
 require"klasa.php";
-$MainObiekt = new MainClass("localhost","root","","baza");
-
+$MainObiekt = new MainClass();
+require_once"interfaceClass.php";
+$interfaceClass = new InterfaceClass();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<?php
+$interfaceClass -> printHead("jd.css");
+?>
 <body>
 <form>
 <label for="cars">Choose a car:</label>
@@ -77,6 +75,11 @@ function dymy($jd,$jd2){
 ?>
 
 </body>
+<footer>
+    <?php
+    $interfaceClass -> printFooter();
+    ?>
+</footer>
 </html>
 
 

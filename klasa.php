@@ -12,6 +12,17 @@ require"config.php";
 // }
 
 Class MainClass {
+    public function printHead($css){
+        echo '
+        <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="jd.css">
+    <title>DOTACJA KRWI</title>
+</head>
+        ';
+    }
     public function connector($host,$db_user,$db_password,$db_name){
         $conn = new mysqli($host,$db_user,$db_password,$db_name);
         return $conn;
@@ -43,18 +54,18 @@ Class MainClass {
 
     }
     public function stankonta($username){
-        $connection = new mysqli($this->host,$this->db_user,$this->db_password,$this->db_name);
+        $conn = $this -> connector("localhost","root","","baza");
         $sql = "SELECT userMoney FROM uzytkownicy where username='$username'";
-        $result = $connection ->query($sql);
+        $result = $conn ->query($sql);
         $data = $result -> fetch_assoc();
         $kasa = $data['userMoney'];
         return $kasa;
 
     }
     public function grupa($username){
-        $connection = new mysqli($this->host,$this->db_user,$this->db_password,$this->db_name);
+        $conn = $this -> connector("localhost","root","","baza");
         $sql = "SELECT grupa_krwi FROM uzytkownicy where username='$username'";
-        $result = $connection ->query($sql);
+        $result = $conn ->query($sql);
         $data = $result -> fetch_assoc();
         $grupa = $data['grupa_krwi'];
         return $grupa;
@@ -73,5 +84,10 @@ Class MainClass {
 
 // $connection -> close();
 }
+
+
+
+
+
 
 ?>
