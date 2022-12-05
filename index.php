@@ -12,7 +12,7 @@
         session_unset();
     ?>
     <div id="stronga_główna">
-        <h1>Filmweb_logo</h1>
+        <h1>Blood Donation</h1>
     </div>
     <div id="navbar">
         <h3 id="navbarContent"><a href="rejestracja.php">Rejestracja</h3></a>

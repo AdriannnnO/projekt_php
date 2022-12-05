@@ -83,16 +83,23 @@ if (isset($_POST["username"]) & isset($_POST["userPassword"]) & isset($_POST["us
   $repeatPassword = $_POST['repeatPassword'];
 
   if (isset($username) & isset($useremail) & isset($userpassword)){
-    $MainObiekt = new MainClass("localhost","root","","baza");
-
+    $MainObiekt = new MainClass();
+    $conn = $MainObiekt -> connector("localhost","root","","baza");
     if ($MainObiekt->walidacja($username,$useremail,$userpassword,$repeatPassword)==TRUE){
-        $MainObiekt -> rejestracja($username,$useremail,$userpassword,$repeatPassword); //rejestracja 
+      $sql = "SELECT * FROM uzytkownicy WHERE username='$username'AND userEmail='$useremail' AND userPassword='$userpassword'";
+      $result = $conn -> query($sql);
+    }
+      if ($result -> num_rows == 1){
+          echo "uzytkownik juz istnieje!";
+      } else {
+          $sql = "INSERT INTO uzytkownicy (username, useremail, userpassword) values ('".$username."','".$useremail."','".$userpassword."')";
+          $result = $conn -> query($sql);
+          echo "rej dokonczony"; 
         $_SESSION['loggedin'] = true;
         $MainObiekt -> przekierowanie('porej.php');
-    }else{
-      alert('niepoprawne dane logowania');
-    }
- }
+      }}else{
+        echo('niepoprawne dane logowania');
+  }
 }
 // $connection -> close();
 
