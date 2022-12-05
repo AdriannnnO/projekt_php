@@ -2,7 +2,7 @@
 require('klasa.php');
 session_start();
 ?>
-<link rel="stylesheet" type="text/css" href="jd.css">
+<link rel="stylesheet" type="text/css" href="style.css">
 <?php
 $MainObiekt = new MainClass("localhost","root","","baza");
 if (isset($_SESSION['loggedin'])==TRUE) {

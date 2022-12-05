@@ -31,6 +31,7 @@ $interfaceClass -> printHead("jd.css");
     <div id="Sponsorowane_filmy">
         <h2>Dlaczego my?</h2>
         <p>łatwy przydział ludzi</p>
+        <p>a</p>
     </body>
 <footer>
 <?php

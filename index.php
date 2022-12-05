@@ -18,11 +18,11 @@ $interfaceClass -> printHeader();
         <P id="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eleifend lobortis. Integer commodo sit amet nibh sit amet vehicula. Mauris ac tincidunt ante, id placerat tortor. Vestibulum dignissim sollicitudin erat quis vehicula. Integer nec ullamcorper mauris. Morbi tincidunt, tortor vel rutrum dictum, tellus tellus dapibus dui, non vehicula augue mauris at arcu. Sed laoreet tellus quis arcu pretium hendrerit. Phasellus posuere, metus nec elementum interdum, mauris velit accumsan enim, ut iaculis massa neque ut nisl. Quisque eu egestas mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus, velit eu gravida accumsan, orci tellus varius nisi, in euismod.</p>
     </div>;
     <div id="Sponsorowane_filmy">
-        <h2>Dlaczego my?</h2>
-        <p>łatwy przydział ludzi</p>
-        <p>prosta obsługa</p>
-        <p>niskie ceny</p>
-        <p>x</p>
+        <h2>Pomagam E22 to:</h2>
+        <p>szybkie utworzenie zbiórki</p>
+        <p>0 prowizji</p>
+        <p>cos tam jeszcze</p>
+        <p>mati zrob cssa ok</p>
         <p>x</p>
     </div>
 

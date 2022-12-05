@@ -7,7 +7,7 @@ class InterFaceClass extends MainClass{
     public function printHeader(){
         if (isset($_SESSION['loggedin'])) {
             echo '<div id="stronga_główna">
-        <h1>Blood Donation</h1>
+        <h1>POMAGAM E22</h1>
     </div>
     <div id="navbar">
         <h3 id="navbarContent"><a href="s2.php">Profil</h3></a>
@@ -16,7 +16,7 @@ class InterFaceClass extends MainClass{
         }
         else{
             echo '<div id="stronga_główna">
-        <h1>Blood Donation</h1>
+        <h1>POMAGAM E22</h1>
     </div>
     <div id="navbar">
         <h3 id="navbarContent"><a href="rejestracja.php">Rejestracja</h3></a>
