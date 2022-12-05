@@ -1,12 +1,6 @@
-Strona Główna:
- - NavBar(Filmy, Seriale, Rankingi)
-Filmy, Seriale:
- - Dodanie Filmu
- - Średnia Ocen
- - Obsada Filmu
- - Opis Filmu
- - Recenzje Użytkowników
-Ranking:
- - Top 10
- - Filtry
- -
+STRONA: CHARITY DONATION PAGE / POMAGAM.PL
+ZBIÓRKI (CREATORID (FOREIGN KEY OD USERID) DATA \ CEL \ ILE ZEBRANO \ BANER ZBIORKI \)
+LISTA ZBIÓREK ZAMKNIETYCH I OTWARTYCH
+ZBIÓRKI UZYTKOWNIKA ZALOGOWANEGO
+TWORZENIE I USUWANIE ZBIÓREK PRZEZ UZYTKOWNIKA
+WPŁACANIE NA ZBIÓRKI
