@@ -12,7 +12,7 @@ $interfaceClass -> printHead("jd.css");
 ?>
 <?php
         if (isset($_SESSION['username'])) {
-            echo '<h1>Witaj ' . $_SESSION['username'] . '</h1>';
+            // echo '<h1>Witaj ' . $_SESSION['username'] . '</h1>';
         }
         else{
             $interfaceClass -> przekierowanie("index.php");

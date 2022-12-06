@@ -20,7 +20,9 @@ class InterFaceClass extends MainClass{
         }
         else{
             echo "<div id='top'>
+            <div id='leftop'>
         <h1>POMAGAM E22</h1>
+        </div>
     <div id='navbar'>
         <h3 id='navbarContent'><a href='rejestracja.php'>Rejestracja</h3></a>
         <h3 id='navbarContent'><a href='ranking.php'>Ranking</h3></a>
