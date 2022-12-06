@@ -13,18 +13,6 @@ $interfaceClass -> printHeader();
 
 </header>
 <body>
-    <div id="rozmiar-list">
-    </div>
-</body>
-<footer>
-    <?php
-    $interfaceClass -> printFooter();
-    ?>
-</footer>
-</html>
-
-
-
 <?php
 
 
@@ -37,11 +25,21 @@ $result = $conn->query("SELECT * FROM zbiorki");
     <div id="gallery"> 
         <?php while($row = $result->fetch_assoc()){ ?> 
             <div id="zbiorka">
+            <p><?php echo ($row['nazwa']); ?></p>
             <img src="images/<?php echo ($row['img_src']); ?>" alt="Girl in a jacket" width="120" height="100">
-            <p><?php echo ($row['opis']); ?></p>
-            </div id="zbiorka">
+            </div>
         <?php } ?> 
     </div> 
 <?php }else{ ?> 
     <p class="status error">Image(s) not found...</p> 
 <?php } ?>
+</body>
+<footer>
+    <?php
+    $interfaceClass -> printFooter();
+    ?>
+</footer>
+</html>
+
+
+

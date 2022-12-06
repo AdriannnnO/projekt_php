@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 session_start();
 require"klasa.php";
 $MainObiekt = new MainClass();
@@ -91,4 +91,4 @@ function dymy($jd,$jd2){
 
 
 
-
+ -->
