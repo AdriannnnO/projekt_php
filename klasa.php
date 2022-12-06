@@ -13,15 +13,15 @@ require"config.php";
 
 Class MainClass {
     public function printHead($css){
-        echo '
+        echo "
         <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="jd.css">
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' type='text/css' href='$css'>
     <title>DOTACJA KRWI</title>
 </head>
-        ';
+        ";
     }
     public function connector($host,$db_user,$db_password,$db_name){
         $conn = new mysqli($host,$db_user,$db_password,$db_name);

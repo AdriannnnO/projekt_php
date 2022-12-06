@@ -1,19 +1,16 @@
+
 body {
   font-family: Nunito Sans;
   background-color: #3B3B98;
   margin: 0;
 }
-h1{
-  text-align: center;
-  color:#ecf0f1;
-}
+
 .center-item {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* border: 10px solid black; */
-  margin-top: 115px;
+  height: 100vh;
 }
 .center-item form {
   width: 40%;
