@@ -11,6 +11,28 @@ h1 {
   font-size: 82px;
 }
 
+#produkt {
+  margin-left: 10em;
+  border: 5px solid rgb(0, 195, 255);
+  height: 1000px;
+  width: 920px;
+}
+#produkt h1 {
+  color: #3498db;
+  text-align: center;
+}
+#produkt img {
+  border-radius: 25px;
+  border: 2px;
+  width: 920px;
+  height: 600px;
+}
+#produkt div {
+  border: 5px solid black;
+  width: 920px;
+  height: 600px;
+}
+
 #siemano {
   margin-left: 20px;
 }
@@ -47,6 +69,7 @@ h1 {
 }
 
 #top {
+  border: 2px solid black;
   height: 10%;
   display: flex;
   justify-content: space-between;
@@ -54,6 +77,7 @@ h1 {
 }
 
 #leftop {
+  border: 2px solid black;
   width: 33%;
   margin-left: 50px;
   margin-top: auto;
