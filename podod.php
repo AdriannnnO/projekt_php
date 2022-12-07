@@ -10,7 +10,7 @@ if (isset($_SESSION['dodano'])==TRUE) {
         $_SESSION['dodano'] = false;
         echo "<h1><a href='index.php'>POWRÓT</a></h1>";
     }else{
-        $MainObiekt -> przekierowanie("index.php");
+        $MainObiekt -> przekierowanie("lista.php");
         // echo "nigga";
      }
 ?>
