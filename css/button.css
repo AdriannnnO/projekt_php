@@ -1,0 +1,24 @@
+button {
+  position: relative;
+  outline: none;
+  text-decoration: none;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  height: 60px;
+  width: 210px;
+  opacity: 1;
+  background-color: #d70909;
+  border: 1px solid rgba(22, 76, 167, 0.6);
+}
+
+span {
+  color: rgb(22, 76, 167);
+  font-size: 20px;
+  font-family: "Gruppo";
+  font-weight: 500;
+  letter-spacing: 0.7px;
+}/*# sourceMappingURL=button.css.map */

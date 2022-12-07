@@ -1,5 +1,6 @@
+@import "button.css";
 html {
-  background-image: url("../assets/tlo.png");
+  background-image: url("../assets/blue.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -11,10 +12,37 @@ h1 {
   font-size: 82px;
 }
 
+#huj {
+  width: 20%;
+  border: 5px solid rgb(22, 76, 167);
+  border-radius: 20px;
+  height: 300px;
+  margin-right: 130px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+#huj img {
+  width: 20px;
+  height: 30px;
+}
+#huj span {
+  margin: 10px;
+}
+#huj button {
+  margin: 10px;
+}
+#strg {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
 #produkt {
   margin-left: 10em;
-  border: 5px solid rgb(0, 195, 255);
-  height: 1000px;
+  border-radius: 25px;
+  border: 2px solid black;
+  min-height: 1000px;
   width: 920px;
 }
 #produkt h1 {
@@ -23,14 +51,17 @@ h1 {
 }
 #produkt img {
   border-radius: 25px;
-  border: 2px;
+  border: 2px solid black;
   width: 920px;
   height: 600px;
 }
 #produkt div {
-  border: 5px solid black;
   width: 920px;
   height: 600px;
+}
+#produkt p {
+  font-size: 40px;
+  margin-left: 40px;
 }
 
 #siemano {
@@ -69,7 +100,6 @@ h1 {
 }
 
 #top {
-  border: 2px solid black;
   height: 10%;
   display: flex;
   justify-content: space-between;
@@ -77,7 +107,6 @@ h1 {
 }
 
 #leftop {
-  border: 2px solid black;
   width: 33%;
   margin-left: 50px;
   margin-top: auto;
@@ -148,7 +177,7 @@ ul li a {
   display: block;
   margin: 25px;
   padding: 4px 0;
-  color: #ecf0f1;
+  color: #000000;
   text-decoration: none;
   text-transform: uppercase;
   transition: 0.5s;
@@ -167,7 +196,7 @@ ul li a::after {
   transition: transform 0.5s;
 }
 ul li a:hover {
-  color: #95a5a6;
+  color: #ff0000;
 }
 ul li a:hover::after {
   transform: scaleX(1);

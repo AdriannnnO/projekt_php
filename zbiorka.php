@@ -29,10 +29,15 @@ $interfaceClass -> printHeader();
                 $wymagana = $data['WymaganaKwota'];
             }
                 ?>
+                <div id="strg">
                     <div id="produkt">
                     <div><img src="images/<?php echo ($data['img_src']); ?>"></div>
                         <h1><?php echo ($data['nazwa']); ?></h1>
                         <p><?php echo ($data['opis']); ?></p>
+                    </div>
+                    <div id="huj">
+                            <button><span>Wpłać</span></button>
+                            <button onclick="Copy()"><span>Udostępnij zbiórkę</span></button>
                     </div>
                 <?php
         }
@@ -56,8 +61,11 @@ left join uzytkownicy on zbiorki.user_id=uzytkownicy.user_id where id_zbiorki='$
 $result = $conn -> query($opo);
         $data = $result -> fetch_assoc();
         $resulta = $data['username'];
-echo $resulta;
-
-
-
+// echo $resulta;
 ?>
+<script type="text/javascript">
+function Copy() {
+    urlCopied.innerHTML = window.location.href;
+  }
+<script>
+
