@@ -1,19 +1,36 @@
 html {
-  background-color: aquamarine;
+  background-image: url("assets/tlo.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 h1 {
-  color: green;
+  color: rgb(144, 7, 144);
+  font-family: "Gruppo";
+  font-size: 82px;
+}
+
+#siemano {
+  margin-left: 20px;
+}
+#siemano h3 {
+  font-family: "Gruppo";
+  font-size: 40px;
+}
+#siemano p {
+  font-family: "Gruppo";
+  font-size: 40px;
 }
 
 #gallery {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 120px;
+  margin-top: 40px;
 }
 
 #zbiorka {
-  border: 5px solid red;
+  border: 5px solid gold;
   width: 250px;
   margin: 15px;
 }
@@ -30,12 +47,20 @@ h1 {
 }
 
 #top {
-  height: 23%;
+  height: 10%;
   display: flex;
+  justify-content: space-between;
+  font-family: "Gruppo";
 }
 
 #leftop {
-  width: 30%;
+  width: 33%;
+  margin-left: 50px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+#leftop h1 {
+  font-size: 80px;
 }
 
 #navbar {
@@ -56,15 +81,15 @@ h1 {
 }
 
 #text {
-  float: left;
   width: 60%;
-  border: 5px;
-  border-color: red;
-  border-style: solid;
+  font-family: "Gruppo";
+  margin-left: 20px;
 }
-
-#lorem {
-  font-size: 30px;
+#text p, #text h3, #text br {
+  font-size: 40px;
+}
+#text h2 {
+  font-size: 40px;
 }
 
 footer {
@@ -83,11 +108,44 @@ footer {
   text-align: center;
 }
 
-#Sponsorowane_filmy {
-  border: 5px;
-  border-color: red;
-  border-style: solid;
-  width: 30%;
-  margin-right: 15%;
-  margin-left: 65%;
+ul {
+  margin-top: 0px;
+  margin-right: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  list-style-type: none;
+}
+ul li {
+  padding: 6px 0;
+}
+ul li a {
+  position: relative;
+  display: block;
+  margin: 25px;
+  padding: 4px 0;
+  color: #ecf0f1;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  font-size: 25px;
+}
+ul li a::after {
+  position: absolute;
+  content: "";
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #3498db;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s;
+}
+ul li a:hover {
+  color: #95a5a6;
+}
+ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }/*# sourceMappingURL=jd.css.map */

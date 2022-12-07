@@ -63,7 +63,7 @@ if($result = $conn -> query($sql)) {
     $result -> close();
     $_SESSION['loggedin'] = true;
     $_SESSION['username'] = $data['username'];
-    $MainObiekt -> przekierowanie("indexlogin.php");
+    $MainObiekt -> przekierowanie("lista.php");
   }
   else {
     $_SESSION['loginerror'] = true;

@@ -14,6 +14,10 @@ $interfaceClass -> printHeader();
 </header>
 <body>
 <?php
+$interfaceClass -> printHej();
+?>
+</div>
+<?php
 
 
 $MainObiekt = new MainClass();

@@ -9,13 +9,14 @@ class InterFaceClass extends MainClass{
             echo "<div id='top'>
         <div id='leftop'>
         <h1>POMAGAM E22</h1>
-        <h2>$_SESSION[username]</h2>
         </div>
-    <div id='navbar'>
-        <h3 id='navbarContent'><a href='s2.php'>Profil</h3></a>
-        <h3 id='navbarContent'> <a href='logout.php'>LogOut</h3></a>
-        <h3 id='navbarContent'> <a href='lista.php'>lista</h3></a>
-        <h3 id='navbarContent'> <a href='dodaj.php'>dodaj zbiórke</h3></a>
+    <div>
+    <ul>
+        <li><a href='s2.php'>Profil</a></li>
+        <li><a href='logout.php'>LogOut</a></li>
+        <li><a href='lista.php'>lista</a></li>
+        <li><a href='dodaj.php'>dodaj zbiórke</a></li>
+    </ul>
     </div>";
         }
         else{
@@ -23,11 +24,14 @@ class InterFaceClass extends MainClass{
             <div id='leftop'>
         <h1>POMAGAM E22</h1>
         </div>
-    <div id='navbar'>
-        <h3 id='navbarContent'><a href='rejestracja.php'>Rejestracja</h3></a>
-        <h3 id='navbarContent'><a href='ranking.php'>Ranking</h3></a>
-        <h3 id='navbarContent'> <a href='lista.php'>lista</h3></a>
-        <h3 id='navbarContent'> <a href='logowanie.php'>Logowanie</h3></a>
+    <div>
+    <ul>
+    <li><a href='rejestracja.php'>Rejestracja</a></li>
+    <li><a href='logowanie.php'>Logowanie</a></li>
+    <li><a href='lista.php'>lista</a></li>
+    <li><a href='onas.php'>o nas zbiórke</a></li>
+    </ul>
+
     </div>";
         }
 
@@ -37,5 +41,21 @@ class InterFaceClass extends MainClass{
     <div id='footer_content'>siema eniu</div>
     <div id='footer_content'>siema eniu</div>";
     }
+    public function printHej(){
+        if (isset($_SESSION["loggedin"])) {
+            echo "<body>
+            <div id='siemano'>
+            <h3 id='hej'>Hej! $_SESSION[username]<h3>
+            <p>Cieszymy sie że cie tu mamy! poniżej znajdziesz listę dostępnych zbiórek.</p>
+        </div>";
+        }
+        else{
+            echo "<body>
+            <div id='siemano'>
+            <p>Poniżej znajduję się lista zbiórek.</p>
+        </div>";
+
+    }
+}
 }
 ?>

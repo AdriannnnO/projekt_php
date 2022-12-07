@@ -26,7 +26,7 @@ $interfaceClass -> printHead("jd.css");
     </header>
     <body>
     <div id="text">
-        <P id="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eleifend lobortis. Integer commodo sit amet nibh sit amet vehicula. Mauris ac tincidunt ante, id placerat tortor. Vestibulum dignissim sollicitudin erat quis vehicula. Integer nec ullamcorper mauris. Morbi tincidunt, tortor vel rutrum dictum, tellus tellus dapibus dui, non vehicula augue mauris at arcu. Sed laoreet tellus quis arcu pretium hendrerit. Phasellus posuere, metus nec elementum interdum, mauris velit accumsan enim, ut iaculis massa neque ut nisl. Quisque eu egestas mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus, velit eu gravida accumsan, orci tellus varius nisi, in euismod.</p>
+        <P id="lorem">Witaj użytkowniku, witamy na Pomagam E22, strony do zakładania darmowych zbiórek!</p>
     </div>
     <div id="Sponsorowane_filmy">
         <h2>Dlaczego my?</h2>
