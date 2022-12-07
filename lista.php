@@ -4,7 +4,7 @@
 session_start();
 require_once"interfaceClass.php";
 $interfaceClass = new InterfaceClass();
-$interfaceClass -> printHead("jd.css");
+$interfaceClass -> printHead("css/jd.css");
 ?>
 <header>
 <?php
