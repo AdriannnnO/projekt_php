@@ -15,10 +15,9 @@ $MainObiekt = new MainClass();
     <title>DocumEnt</title>
 </head>
 <body>
-    <h1> <a href="index.php"> <- Wróć </h1></a>
-    <h1 id="rej">Rejestracja</h1>
     <div class="center-item">
     <form action="rejestracja.php" method="post" accept-charset="UTF-8">
+      <h1> Rejestracja </h1>
     <input type="text" placeholder="Enter Username" name="username" id="" required>
 
 
@@ -31,6 +30,7 @@ $MainObiekt = new MainClass();
     <input type="email" placeholder="Enter Email" name="userEmail" id="" requierd>
 
     <button type="submit" name="ok">Register</button>
+    <input type="button" id="k" onclick="location.href='index.php';" value="Anuluj" />3333333
     
   </div>
 </form>

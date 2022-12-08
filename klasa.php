@@ -15,12 +15,13 @@ Class MainClass {
     public function printHead($css){
         echo "
         <head>
+    <link rel='icon' type='image/x-icon' href='assets/favicon.ico'>
     <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <link rel='stylesheet' type='text/css' href='$css'>
     <link href='https://fonts.googleapis.com/css?family=Gruppo' rel='stylesheet'>
-    <title>DOTACJA KRWI</title>
+    <title>POMAGAM E22</title>
 </head>
         ";
     }

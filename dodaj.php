@@ -47,7 +47,7 @@ if (isset($_POST["nazwa"]) & isset($_POST["cel"]) & isset($_POST["opis"])){
     if (!file_exists($_FILES['image']['tmp_name']) || !is_uploaded_file($_FILES['image']['tmp_name']) || filesize($image_file["tmp_name"]) <= 0 || !exif_imagetype($image_file["tmp_name"])) {
         //     alert('NIEPOPRAWNY ROZMIAR PLIKU/BRAK PLIKU');){
             $sql = "INSERT INTO zbiorki (WymaganaKwota, user_id, opis, nazwa) values ('".$cel."','".$user_id."','".$opis."','".$nazwa."')";
-            $result = $conn -> query($sql);
+            $conn -> query($sql);
             $_SESSION['dodano'] = true;
             $MainObiekt -> przekierowanie("podod.php");
     }
@@ -60,7 +60,7 @@ if (isset($_POST["nazwa"]) & isset($_POST["cel"]) & isset($_POST["opis"])){
             __DIR__ . "/images/" . $image_name
         );
         $sql = "INSERT INTO zbiorki (WymaganaKwota, user_id, opis, img_src, nazwa) values ('".$cel."','".$user_id."','".$opis."','".$image_name."','".$nazwa."')";
-        $result = $conn -> query($sql);
+        $conn -> query($sql);
         $_SESSION['dodano'] = true;
         $MainObiekt -> przekierowanie("podod.php");
     }

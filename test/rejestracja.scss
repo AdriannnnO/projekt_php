@@ -1,3 +1,9 @@
+html{
+    background-image: url('../assets/blue.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
 form {
     border: 3px solid #f1f1f1;
   }
@@ -60,5 +66,4 @@ h1{
     .cancelbtn {
       width: 100%;
     }
-  }
-
+}}

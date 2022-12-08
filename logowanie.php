@@ -11,13 +11,11 @@ session_start();
 
     <title>Document</title>
 </head>
+
 <body>
-    <h1> <a href="index.php"> <- Wróć</h1></a>
-    <h1 id="rej">Logowanie</h1>
-
-
     <div class="center-item">
     <form action="logowanie.php" method="POST">
+    <h1>Logowanie</h1>
     <input type="text" placeholder="Enter Username" name="username" id="" required>
 
     <input type="password" placeholder="Enter Password" name="userPassword" id="" required>
@@ -25,6 +23,8 @@ session_start();
     <input type="email" placeholder="Enter Email" name="userEmail" id="" requierd>
 
     <button type="submit" name="ok">Login</button>
+    <input type="button" id="k" onclick="location.href='index.php';" value="Anuluj" />
+
     
   </div>
 

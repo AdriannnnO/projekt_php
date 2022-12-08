@@ -1,19 +1,32 @@
 $maincolor:#3B3B98;
 $textcolor:#fff;
-$font-family:Nunito Sans;
+@import url('https://fonts.googleapis.com/css?family=Gruppo');
+
+
+
+html{
+  font-family: 'Gruppo';
+  background-image: url('../assets/blue.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
 body {
-  font-family: $font-family;
-  background-color: $maincolor;
   margin: 0;
+  h1{
+    text-align: center;
+  }
 }
 
 .center-item {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  // flex-direction: column;
   height: 100vh;
+  // border: 5px solid black;
+  // margin-top: 10px;
 
   form {
     width: 40%;
@@ -27,12 +40,17 @@ body {
       margin-top: 20px;
       outline: none;
       border: none;
-      background-color: #ecf0f1;
+      background-color: #f1ecec;
       padding: 10px;
       line-height: 2;
       font-size: 16px;
     }
-
+    h1{
+      font-family: Gruppo;
+    }
+    #k{
+      background-color: red;
+    }
     button {
       background-color: #4834d4;
       color: $textcolor;
@@ -49,7 +67,6 @@ body {
       }
 
     }
-
     p {
       text-align: center;
       margin-bottom: 0px;

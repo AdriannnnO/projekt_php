@@ -8,7 +8,7 @@ class InterFaceClass extends MainClass{
         if (isset($_SESSION["loggedin"])) {
             echo "<div id='top'>
         <div id='leftop'>
-        <h1>POMAGAM E22</h1>
+        <a href='index.php'><h1>POMAGAM E22</h1></a>
         </div>
     <div>
     <ul>
@@ -22,14 +22,14 @@ class InterFaceClass extends MainClass{
         else{
             echo "<div id='top'>
             <div id='leftop'>
-        <h1>POMAGAM E22</h1>
+            <a href='index.php'><h1>POMAGAM E22</h1></a>
         </div>
     <div>
     <ul>
     <li><a href='rejestracja.php'>Rejestracja</a></li>
     <li><a href='logowanie.php'>Logowanie</a></li>
     <li><a href='lista.php'>lista</a></li>
-    <li><a href='onas.php'>o nas zbiórke</a></li>
+    <li><a href='onas.php'>addtext</a></li>
     </ul>
 
     </div>";

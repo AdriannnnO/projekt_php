@@ -1,16 +1,17 @@
 @import "button.css";
-
+@import url('https://fonts.googleapis.com/css?family=Gruppo');
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
 html{
+    font-family: 'Gruppo';
     background-image: url('../assets/blue.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
 }
-h1{
-    color: rgb(144, 7, 144);
-    font-family: 'Gruppo';
-    font-size: 82px;
-}
+
 
 #huj{
     width: 20%;
@@ -126,7 +127,10 @@ h1{
     margin-top: auto;
     margin-bottom: auto;
     h1{
-        font-size: 80px;
+        color: rgb(144, 7, 144);
+        font-family: 'Gruppo';
+        font-size: 82px;
+        text-decoration: none;
     }
 }
 

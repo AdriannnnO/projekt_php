@@ -1,0 +1,56 @@
+html {
+  background-image: url("../assets/blue.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+html form {
+  border: 3px solid #f1f1f1;
+}
+html h1 {
+  text-align: center;
+  color: rgb(0, 255, 128);
+  -webkit-text-decoration: dashed;
+          text-decoration: dashed;
+}
+html input[type=text], html input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+html button {
+  background-color: green;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+html button:hover {
+  opacity: 0.8;
+}
+html .cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+html .container {
+  padding: 16px;
+}
+html span.psw {
+  float: right;
+  padding-top: 16px;
+}
+@media screen and (max-width: 300px) {
+  html span.psw {
+    display: block;
+    float: none;
+  }
+  html .cancelbtn {
+    width: 100%;
+  }
+}/*# sourceMappingURL=rejestracja.css.map */
