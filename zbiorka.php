@@ -12,6 +12,7 @@ $interfaceClass -> printHead("css/jd.css");
 $interfaceClass -> printHeader();
 ?>
 </header>
+
 <body>
         <?php
         if (isset($_GET['id_zbiorki'])){
@@ -27,6 +28,7 @@ $interfaceClass -> printHeader();
                 $img_src = $data['img_src'];
                 $zebrana = $data['ZebranaKwota'];
                 $wymagana = $data['WymaganaKwota'];
+                $WymnożonyProcent = ($zebrana/$wymagana)*100; 
             }
                 ?>
                 <div id="strg">
@@ -36,6 +38,12 @@ $interfaceClass -> printHeader();
                         <p><?php echo ($data['opis']); ?></p>
                     </div>
                     <div id="huj">
+                    <div><h3>Zebrano już</h3></div>
+                            <div><h3><?php echo $zebrana; ?> zł z <?php echo $wymagana; ?>zł</h3></div>
+                            <div class="skills-mesure">
+                            <div data-pourcent="<?php echo floor($WymnożonyProcent); ?>"><?php echo $zebrana; ?>zł</div>
+                        </div>
+                        <hr class="eo">
                             <button><span>Wpłać</span></button>
                             <button onclick="Copy()"><span>Udostępnij zbiórkę</span></button>
                     </div>

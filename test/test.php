@@ -1,48 +1,72 @@
-
-<!DOCTYPE html>
-<html>
 <head>
-    <title>Design a Progress bar</title>
+<link rel='stylesheet' type='text/css' href='test3.css'>
 </head>
-<body>
-    <h1>ASDASDASD</h1>
-    <p>1</p>
-    <div class="container">
-        <div class="skill html">40%</div>
+<div class="progress-wrap progress" data-progress-percent="25">
+  <div class="progress-bar progress"></div>
+</div>
+<p>Emmet code to generate the list:</p>
+<ul>
+  <li>
+    <p>skill 1</p>
+    <div class="skills-mesure">
+      <div data-pourcent="10">10%</div>
     </div>
-  
-    <p>2</p>
-    <div class="container">
-        <div class="skill php">60%</div>
+  </li>
+  <li>
+    <p>skill 2</p>
+    <div class="skills-mesure">
+      <div data-pourcent="20">20%</div>
     </div>
-</body>
-  
-</html>
-<style>
-    p {
-        font-size: 20px;
-    }
-  
-    .container {
-        background-color: rgb(192, 192, 192);
-        width: 80%;
-        border-radius: 15px;
-    }
-  
-    .skill {
-        background-color: rgb(116, 194, 92);
-        color: white;
-        padding: 1%;
-        text-align: right;
-        font-size: 20px;
-        border-radius: 15px;
-    }
-  
-    .html {
-        width: 40%;
-    }
-  
-    .php {
-        width: 60%;
-    }
-</style>
+  </li>
+  <li>
+    <p>skill 3</p>
+    <div class="skills-mesure">
+      <div data-pourcent="30">30%</div>
+    </div>
+  </li>
+  <li>
+    <p>skill 4</p>
+    <div class="skills-mesure">
+      <div data-pourcent="40">40%</div>
+    </div>
+  </li>
+  <li>
+    <p>skill 5</p>
+    <div class="skills-mesure">
+      <div data-pourcent="50">50%</div>
+    </div>
+  </li>
+  <li>
+    <p>skill 6</p>
+    <div class="skills-mesure">
+      <div data-pourcent="60">60%</div>
+    </div>
+  </li>
+  <li>
+    <p>skill 7</p>
+    <div class="skills-mesure">
+      <div data-pourcent="70">70%</div>
+    </div>
+  </li>
+  <li>
+    <p>skill 8</p>
+    <div class="skills-mesure">
+      <div data-pourcent="80">80%</div>
+    </div>
+  </li>
+  <li>
+    <p>skill 9</p>
+    <div class="skills-mesure">
+      <div data-pourcent="90">90%</div>
+    </div>
+  </li>
+  <li>
+    <p>skill 10</p>
+    <div class="skills-mesure">
+      <div data-pourcent="100">100%</div>
+    </div>
+  </li>
+</ul>
+<script>
+    
+</script>
