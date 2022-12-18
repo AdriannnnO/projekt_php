@@ -41,7 +41,7 @@ $interfaceClass -> printHeader();
                     <div><h3>Zebrano już</h3></div>
                             <div><h3><?php echo $zebrana; ?> zł z <?php echo $wymagana; ?>zł</h3></div>
                             <div class="skills-mesure">
-                            <div data-pourcent="<?php echo floor($WymnożonyProcent); ?>"><?php echo $zebrana; ?>zł</div>
+                            <div data-pourcent="<?php echo floor($WymnożonyProcent); ?>"><?php echo round($WymnożonyProcent); ?>%</div>
                         </div>
                         <hr class="eo">
                             <button><span>Wpłać</span></button>
