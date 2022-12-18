@@ -12,7 +12,7 @@ html {
   background-size: cover;
 }
 
-#huj {
+#iop {
   width: 20%;
   border: 5px solid rgb(22, 76, 167);
   border-radius: 20px;
@@ -22,28 +22,28 @@ html {
   justify-content: center;
   align-items: center;
 }
-#huj hr {
+#iop hr {
   width: 100%;
 }
-#huj img {
+#iop img {
   width: 20px;
   height: 30px;
 }
-#huj span {
+#iop span {
   margin: 10px;
 }
-#huj button {
+#iop button {
   margin: 10px;
 }
-#huj div {
+#iop div {
   padding: 0;
   max-width: 700px;
 }
-#huj div h3 {
+#iop div h3 {
   margin-bottom: 0;
   margin-top: 0;
 }
-#huj h3 {
+#iop h3 {
   text-align: center;
 }
 

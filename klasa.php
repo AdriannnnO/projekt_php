@@ -12,7 +12,7 @@ require"config.php";
 // }
 
 Class MainClass {
-    public function printHead($css){
+    public function printHead($css, $css2=NULL){
         echo "
         <head>
     <link rel='icon' type='image/x-icon' href='assets/favicon.ico'>
@@ -20,7 +20,7 @@ Class MainClass {
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <link rel='stylesheet' type='text/css' href='$css'>
-    <link rel='stylesheet' type='text/css' href='css/progressbar.css'>
+    <link rel='stylesheet' type='text/css' href='$css2'>
 
     <link href='https://fonts.googleapis.com/css?family=Gruppo' rel='stylesheet'>
     <title>POMAGAM E22</title>

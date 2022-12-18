@@ -2,21 +2,15 @@
 require"klasa.php";
 session_start();
 $MainObiekt = new MainClass();
-echo $_SESSION["username"]
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-
-    <title>DocumEnt</title>
-</head>
+<?php
+$MainObiekt -> PrintHead("css/style.css")
+?>
 <body>
-    <h1> <a href="indexlogin.php"> <- Wróć </h1></a>
+    <h1> <a href="lista.php"> <- Wróć </h1></a>
     <h1 id="rej">dodaj</h1>
     <div class="center-item">
     <form action="dodaj.php" method="post" enctype="multipart/form-data">

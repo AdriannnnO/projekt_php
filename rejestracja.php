@@ -6,14 +6,9 @@ $MainObiekt = new MainClass();
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-
-    <title>DocumEnt</title>
-</head>
+<?php
+$MainObiekt -> PrintHead("css/style.css")
+?>
 <body>
     <div class="center-item">
     <form action="rejestracja.php" method="post" accept-charset="UTF-8">
@@ -30,7 +25,7 @@ $MainObiekt = new MainClass();
     <input type="email" placeholder="Enter Email" name="userEmail" id="" requierd>
 
     <button type="submit" name="ok">Register</button>
-    <input type="button" id="k" onclick="location.href='index.php';" value="Anuluj" />3333333
+    <input type="button" id="k" onclick="location.href='index.php';" value="Anuluj" />
     
   </div>
 </form>
@@ -57,7 +52,7 @@ if (isset($_POST["username"]) & isset($_POST["userPassword"]) & isset($_POST["us
       $conn = $MainObiekt -> connector("localhost","root","","baza");
       $sql = "SELECT * FROM uzytkownicy WHERE username='$username'AND userEmail='$useremail' AND userPassword='$userpassword'";
       $result = $conn -> query($sql);
-      if ($result -> num_rows == 1){
+      if ($result -> num_rows == 1) {
           alert("uzytkownik juz istnieje!");
       } else {
           $sql = "INSERT INTO uzytkownicy (username, useremail, userpassword) values ('".$username."','".$useremail."','".$userpassword."')";

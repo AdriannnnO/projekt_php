@@ -5,7 +5,7 @@ session_start();
 require_once"interfaceClass.php";
 $MainObiekt = new MainClass();
 $interfaceClass = new InterfaceClass();
-$interfaceClass -> printHead("css/jd.css");
+$interfaceClass -> printHead("css/jd.css", "css/progressbar.css");
 ?>
 <header>
 <?php
@@ -37,7 +37,7 @@ $interfaceClass -> printHeader();
                         <h1><?php echo ($data['nazwa']); ?></h1>
                         <p><?php echo ($data['opis']); ?></p>
                     </div>
-                    <div id="huj">
+                    <div id="iop">
                     <div><h3>Zebrano już</h3></div>
                             <div><h3><?php echo $zebrana; ?> zł z <?php echo $wymagana; ?>zł</h3></div>
                             <div class="skills-mesure">
