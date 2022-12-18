@@ -28,8 +28,8 @@ class InterFaceClass extends MainClass{
     <ul>
     <li><a href='rejestracja.php'>Rejestracja</a></li>
     <li><a href='logowanie.php'>Logowanie</a></li>
-    <li><a href='lista.php'>lista</a></li>
-    <li><a href='onas.php'>addtext</a></li>
+    <li><a href='lista.php'>Lista</a></li>
+    <li><a href='onas.php'>Kontakt</a></li>
     </ul>
 
     </div>";
