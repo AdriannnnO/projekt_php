@@ -29,7 +29,7 @@ $result = $conn->query("SELECT * FROM zbiorki");
     <div id="gallery"> 
         <?php while($row = $result->fetch_assoc()){ ?> 
             <div id="zbiorka">
-           <?php echo "<a href=zbiorka.php?id_zbiorki=",urlencode($row['id_zbiorki']),">"; ?>
+                    <?php echo "<a href=zbiorka.php?id_zbiorki=",urlencode($row['id_zbiorki']),">"; ?>
                     <p><?php echo ($row['nazwa']); ?></p>
                     <img src="images/<?php echo ($row['img_src']); ?>" alt="Girl in a jacket" width="120" height="100">
                 </a>
