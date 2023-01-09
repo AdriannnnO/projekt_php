@@ -7,7 +7,7 @@ $MainObiekt = new MainClass();
 <!DOCTYPE html>
 <html lang="en">
 <?php
-$MainObiekt -> PrintHead("css/style.css")
+$MainObiekt -> PrintHead("css/dodawanie.css")
 ?>
 <body>
     <h1> <a href="lista.php"> <- Wróć </h1></a>
@@ -15,10 +15,12 @@ $MainObiekt -> PrintHead("css/style.css")
     <div class="center-item">
     <form action="dodaj.php" method="post" enctype="multipart/form-data">
     <input type="text" placeholder="nazwa zbiórki" name="nazwa" required>
-    <input type="number" placeholder="cel" name="cel" required>
+    <input id="cel" type="number" placeholder="cel" name="cel" required>
     <input type="text" placeholder="opis" name="opis" requierd>
-    <input type="file" name="image" accept="image/*" requierd/>
-
+    <!-- <input type="file" name="image" accept="image/*" requierd/> -->
+    <p>Upload multiple files with the file dialog or by dragging and dropping images onto the dashed region</p>
+    <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+    <label class="button" for="fileElem">Select some files</label>
 
     <button type="submit" name="ok">Dodaj zbiórke</button>
     
@@ -72,3 +74,13 @@ function idusera($username, $conn){
     return $user_id;
 }
 ?>
+
+<script>
+let dropArea = document.getElementById('drop-area')
+
+dropArea.addEventListener('dragenter', handlerFunction, false)
+dropArea.addEventListener('dragleave', handlerFunction, false)
+dropArea.addEventListener('dragover', handlerFunction, false)
+dropArea.addEventListener('drop', handlerFunction, false)
+
+</script>

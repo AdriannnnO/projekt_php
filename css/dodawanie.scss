@@ -1,0 +1,156 @@
+$maincolor:#3B3B98;
+$textcolor:#fff;
+@import url('https://fonts.googleapis.com/css?family=Gruppo');
+
+
+
+html{
+  font-family: 'Gruppo';
+  background-image: url('../assets/blue.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+body {
+  margin: 0;
+  h1{
+    text-align: center;
+  }
+}
+
+.center-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // flex-direction: column;
+  height: 100vh;
+  // border: 5px solid black;
+  // margin-top: 10px;
+
+  form {
+    width: 40%;
+    box-shadow: 1px 0 10px 15px rgba(0, 0, 0, .3);
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+
+    input[type='number']{
+        float: right;
+        width: 15%;
+        margin-top: 20px;
+        padding: 10px;
+        line-height: 2;
+        font-size: 16px;
+        outline: none;
+        border-radius: 8px;
+        background-color: #f1ecec;
+        
+    }
+    input[type='text'] {
+      width: 80%;
+      box-sizing: border-box;
+      margin-top: 20px;
+      outline: none;
+      border-radius: 8px;
+      background-color: #f1ecec;
+      padding: 10px;
+      line-height: 2;
+      font-size: 16px;
+    }
+
+    input:nth-child(3){
+        height: 100px;
+    }
+
+    input[type='file'] {
+        border: 2px solid red;
+        border-radius: 3px;
+    }
+    #drop-area {
+        border: 2px dashed #ccc;
+        border-radius: 20px;
+        width: 480px;
+        font-family: sans-serif;
+        margin: 100px auto;
+        padding: 20px;
+      }
+      #drop-area.highlight {
+        border-color: purple;
+      }
+      p {
+        margin-top: 0;
+      }
+      .my-form {
+        margin-bottom: 10px;
+      }
+      #gallery {
+        margin-top: 10px;
+      }
+      #gallery img {
+        width: 150px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+
+    h1{
+      font-family: Gruppo;
+    }
+    #k{
+      background-color: red;
+    }
+    button {
+      background-color: #4834d4;
+      color: $textcolor;
+      font-size: 18px;
+      width: 100%;
+      outline: none;
+      border: none;
+      padding: 15px;
+      margin-top: 20px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #686de0;
+      }
+
+    }
+    p {
+      text-align: center;
+      margin-bottom: 0px;
+
+      a {
+        text-align: center;
+        text-decoration: none;
+        color: $maincolor;
+        padding-left: 3px;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width:692px) {
+  .center-item {
+    form {
+      width: 60%;
+    }
+  }
+}
+
+@media(max-width:452px) {
+  .center-item {
+    form {
+      width: 70%;
+      padding: 25px;
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
