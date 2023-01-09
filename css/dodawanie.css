@@ -27,6 +27,61 @@ body h1 {
   background-color: #fff;
   border-radius: 8px;
 }
+.center-item form a {
+  color: #369;
+}
+.center-item form .note {
+  width: 500px;
+  margin: 50px auto;
+  font-size: 1.1em;
+  color: #333;
+}
+.center-item form #drop-area {
+  border: 2px dashed rgb(255, 0, 0);
+  border-radius: 20px;
+  max-height: 400px;
+  width: 480px;
+  margin: 5px auto;
+  padding: 2px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  text-align: center;
+}
+.center-item form #drop-area.highlight {
+  border-color: purple;
+}
+.center-item form p {
+  margin-top: 0;
+}
+.center-item form .my-form {
+  margin-bottom: 10px;
+}
+.center-item form #gallery {
+  margin-top: 10px;
+  margin: auto;
+}
+.center-item form #gallery img {
+  margin: auto;
+  width: 150px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.center-item form .button {
+  align-self: center;
+  padding: 10px;
+  background: #ccc;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.center-item form .button:hover {
+  background: #ddd;
+}
+.center-item form #fileElem {
+  margin: auto;
+}
 .center-item form input[type=number] {
   float: right;
   width: 15%;
@@ -52,16 +107,19 @@ body h1 {
 .center-item form input:nth-child(3) {
   height: 100px;
 }
-.center-item form input[type=file] {
-  border: 2px solid red;
-  border-radius: 3px;
+.center-item form .note {
+  width: 500px;
+  margin: 50px auto;
+  font-size: 1.1em;
+  color: #333;
+  text-align: justify;
 }
 .center-item form #drop-area {
+  font-family: sans-serif;
   border: 2px dashed #ccc;
   border-radius: 20px;
   width: 480px;
-  font-family: sans-serif;
-  margin: 100px auto;
+  margin: 50px auto;
   padding: 20px;
 }
 .center-item form #drop-area.highlight {
@@ -81,6 +139,25 @@ body h1 {
   margin-bottom: 10px;
   margin-right: 10px;
   vertical-align: middle;
+}
+.center-item form .button {
+  margin-top: 5px;
+  display: inline-block;
+  padding: 10px;
+  background: #ccc;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.center-item form #progress-bar {
+  margin-top: 5px;
+  align-self: center;
+}
+.center-item form .button:hover {
+  background: #ddd;
+}
+.center-item form #fileElem {
+  display: none;
 }
 .center-item form h1 {
   font-family: Gruppo;

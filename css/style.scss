@@ -29,12 +29,14 @@ body {
   // margin-top: 10px;
 
   form {
+    border-radius: 8px;
     width: 40%;
     box-shadow: 1px 0 10px 15px rgba(0, 0, 0, .3);
     padding: 40px;
     background-color: #fff;
 
     input {
+      border-radius: 8px;
       width: 100%;
       box-sizing: border-box;
       margin-top: 20px;
@@ -52,6 +54,7 @@ body {
       background-color: red;
     }
     button {
+      border-radius: 8px;
       background-color: #4834d4;
       color: $textcolor;
       font-size: 18px;
